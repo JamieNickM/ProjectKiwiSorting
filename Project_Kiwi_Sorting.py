@@ -116,10 +116,10 @@ def MergeSort(arr, l, r):
     return arr
  
  
-def printList(arr):
-    for i in range(len(arr)):
-        print(arr[i], end=" ")
-    print()
+# def printList(arr):
+#     for i in range(len(arr)):
+#         print(arr[i], end=" ")
+#     print()
 
 
 #=================== Quick Sort ====================
@@ -149,46 +149,32 @@ def QuickSort(l, r, nums):
         QuickSort(l, pi-1, nums)  # Recursively sorting the left values
         QuickSort(pi+1, r, nums)  # Recursively sorting the right values
     return nums
+     
 
-print("Unsorted Array")
-print(splitData)
+#=================== Sorting and Printing ====================
 
-size = len(splitData)
-
-QuickSort(0, size - 1,splitData)
-
-print('Sorted Array in Ascending Order:')
-print(splitData)
-       
-
-#=================== Time of Sorting ===================
+# quickSort = np.copy(splitData)
+# quickSort = QuickSort(0,len(quickSort)-1,quickSort)
+# print(*quickSort)
     
-sortedBubble = np.copy(splitData)
-startTime = time.time()
-sortedBubble = BubbleSort(sortedBubble)
-endTime = time.time()
-bubbleSortTime = endTime - startTime
-print('Time Taken: '+ str(np.round(bubbleSortTime,2))+' seconds')
-#print(*sortedBubble)
+# sortedBubble = np.copy(splitData)
+# sortedBubble = BubbleSort(sortedBubble)
+# print(*sortedBubble)
 
 selectionSort = np.copy(splitData)
-startTime = time.time()
 selectionSort = SelectionSort(selectionSort)
-endTime = time.time()
-selectionSortTime = endTime - startTime
-print('Time Taken: '+ str(np.round(selectionSortTime,2))+' seconds')
-#print(*selectionSort)
+print(*selectionSort)
 
 #=================== SR10 Plotting Graphs ====================
 
 # Sorted Data Displayed on Graph
-# plt.title('Kiwi Weights')
-# plt.yticks(np.arange(min(selectionSort),max(selectionSort),0.5))
-# plt.scatter(xValues, selectionSort)
-# plt.show()
+plt.title('Kiwi Weights')
+plt.yticks(np.arange(min(selectionSort),max(selectionSort),0.5))
+plt.scatter(xValues, selectionSort)
+plt.show()
 
 # Unsorted Data Displayed on Graph
-# plt.title('Kiwi Weights')
-# plt.yticks(np.arange(min(splitData),max(splitData),0.5))
-# plt.scatter(xValues, splitData)
-# plt.show()
+plt.title('Kiwi Weights')
+plt.yticks(np.arange(min(splitData),max(splitData),0.5))
+plt.scatter(xValues, splitData)
+plt.show()

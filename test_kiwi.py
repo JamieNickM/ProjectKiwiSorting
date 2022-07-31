@@ -78,3 +78,5 @@ def test_MergeAverage():
     start= time()
     assert np.array_equal(MergeSort(np.copy(averagecase),0,len(averagecase)-1),bestcase)
     print(time()-start)
+
+    
